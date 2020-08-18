@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+    <script src="https://unpkg.com/vue@2.5.13/dist/vue.js"></script>
+
+    <title>Spring Boot Calculator</title>
+</head>
+
+<body>
+    <h1 id="title">Spring Boot Calculation app!</h1>
+    <div id="app">
+        <p id="subtitle">Welcome to a simple Calculation app, written by <strong>{{authorName}}</strong>.</p>
+
+        <h1 id="schead">Simple Calculations:</h1>
+
+        <h2 id="add">Addition:</h2>
+        <input type="number" v-model.number="addVar1"> + <input type="number" v-model.number="addVar2">
+        <button v-on:click="getAddValue()"> = </button> {{addResult}}
+
+        <h2 id="sub">Subtraction:</h2>
+        <input type="number" v-model.number="subVar1"> - <input type="number" v-model.number="subVar2">
+        <button v-on:click="getSubValue()"> = </button> {{subResult}}
+
+        <h2 id="mul">Multiplication:</h2>
+        <input type="number" v-model.number="mulVar1"> * <input type="number" v-model.number="mulVar2">
+        <button v-on:click="getMulValue()"> = </button> {{mulResult}}
+
+        <h2 id="div">Division:</h2>
+        <input type="number" v-model.number="divideVar1"> / <input type="number" v-model.number="divideVar2">
+        <button v-on:click="getDivideValue()"> = </button> {{divideResult}}
+
+        <h2>Sum Parser:</h2>
+        <!-- <input type="text" style="width:550px;" v-model.number="sumString"> -->
+        <p>Input strings using format "1,2,3,..,n".</p>
+        <p>e.g. "1,2,3,4,5" </p>
+        <textarea name="message" rows="5" cols="50" v-model.number="sumString"></textarea>
+        <br><br>
+        <button v-on:click="getSumValue()">Get Sum </button> = {{sumVal}}
+
+        <h1>Sequence Lists:</h1>
+
+        <h3>Fibonacci List:</h3>
+        <input type="number" v-model.number="fibVal">
+        <button v-on:click="getFibList()"> GET LIST </button>
+        <textarea name="message" rows="10" cols="50"> {{fibList}} </textarea>
+
+        <h3>Hailstone List:</h3>
+        <input type="number" v-model.number="hailVal">
+        <button v-on:click="getHailList()"> GET LIST </button>
+        <textarea name="message" rows="10" cols="50"> {{hailList}} </textarea>
+
+        <h3>Pythagorean Triples List:</h3>
+        <input type="number" v-model.number="tripleVal">
+        <button v-on:click="getTripleList()"> GET LIST </button>
+        <textarea name="message" rows="10" cols="50"> {{tripleList}} </textarea>
+
+        <h1>Differentiation Calculation:</h1>
+        <p>Please enter a valid equation.</p>
+        <input type="text" v-model.number="eqn">
+        <!-- <p>Please enter a value for x.</p>
+        <input type="text" v-model.number="xVal"> -->
+        <button v-on:click="getDiffEqn()"> GET DERIVATIVE </button>
+        <!-- <button v-on:click="getDiffVal()"> GET DERIVATIVE NUMERAL </button> -->
+        <p>Derivative Equation: <strong>{{diffEqn}}</strong></p>
+        <!-- <p>Derivative Numeric Value: <strong>{{diffVal}}</strong></p> -->
+
+        <h1>Trigonometric Calculations:</h1>
+
+        <h3>Quick trigonometric values:</h3>
+        <p>Please enter values for trigonometric functions in radians.</p>
+        <p>sin <input type="number" v-model.number="sinVal"> <button v-on:click="getSinValue()"> = </button> {{sinRes}}</p>
+        <p>cos <input type="number" v-model.number="cosVal"> <button v-on:click="getCosValue()"> = </button> {{cosRes}}</p>
+        <p>tan <input type="number" v-model.number="tanVal"> <button v-on:click="getTanValue()"> = </button> {{tanRes}}</p>
+    </div>
+    <script src="scripts/calculator.js "></script>
+</body>
+
+</html>

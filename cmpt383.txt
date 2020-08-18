@@ -1,0 +1,26 @@
+Porject Summary:
+
+What is the overall goal of the project (i.e. what does it do, or what problem is it solving)?
+
+-> Simple fast calculation. One can easily fire up the SpringBoot app and get instant calculations that they desire.
+
+Which languages did you use, and what parts of the system are implemented in each?
+
+->Java, Javascript, and a very little bit of C. Most of the app logic is written in Java, with data serving by JavaScript, more spepcifically Vue.js. C is just used to create a HelloJNI file that I tried to integrate into the app, but kept resulting into server faults.
+
+What methods did you use to communicate between languages?
+
+-> Communication between Java and C handled by JNI. Tried Swig, failed miserably. Communication between Java and Vue.js handled by using the Rest API and a ton of GET requests. 
+
+Exactly what steps should be taken to get the project working, after getting your code? [This should start with vagrant up and can include one or two commands to start components after that.]
+
+-> Follow the following steps:
+vagrant up
+cd project/server
+mvn spring-boot:run
+
+That simple. As I write this, I'll be testing out deployment once I push to git repo.
+
+What features should we be looking for when marking your project?
+
+->I dunno. Up to you.
