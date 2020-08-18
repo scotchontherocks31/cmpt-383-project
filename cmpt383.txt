@@ -14,12 +14,15 @@ What methods did you use to communicate between languages?
 
 Exactly what steps should be taken to get the project working, after getting your code? [This should start with vagrant up and can include one or two commands to start components after that.]
 
--> Follow the following steps:
+-> Follow the following steps: [EDIT: added vagrant ssh]
 vagrant up
+vagrant ssh
 cd project/server
 mvn spring-boot:run
 
-That simple. As I write this, I'll be testing out deployment once I push to git repo.
+That simple. As I write this, I'll be testing out deployment once I push to git repo. [EDIT: test done]
+
+You'll find the app at localhost:3000. Knock yourselves out.
 
 What features should we be looking for when marking your project?
 
